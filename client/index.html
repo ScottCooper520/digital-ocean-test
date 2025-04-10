@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Ocean Test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!-- Note that I don't need to include "../client/public" as it is defined in app.js-->
+    <!-- <script src="./js/clientApp.js"></script> -->
+     <!-- Setting to type 'module' in package.json file -->
+    <script type="module" src="./js/entry.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+</head>
+
+<body>
+    <h2>Welcome to the Memory App Database!</h2>
+    <div id="dataInput">
+        <form action="http://localhost:3000/" method="POST">
+            <div class="label" style="float:left">
+                <label for="id">ID</label>
+                <input id="inputId" name="ID">
+            </div>
+            <div class="label" style="float:left">
+                <label for="title">Title</label>
+                <input id="inputTitle" type="text" name="Title">
+            </div>
+            <div class="label" style="float:left">
+                <label for="tags">Tags</label>
+                <input id="inputTags" type="text" name="Tags">
+            </div>
+            <div class="label" style="float:left">
+                <label for="date">Date</label>
+                <input id="inputDate" type="text" name="Date">
+            </div>
+            <div class="label" style="float:left">
+                <label for="description">Description</label>
+                <input id="inputDescription" type="text" name="Description">
+            </div>
+            <div class="label" style="float:left">
+                <label for="url">URL</label>
+                <input id="inputUrl" type="text" name="URL">
+            </div>
+            <div class="label">
+                <label for="note">Note</label>
+                <input id="inputNote" type="text" name="Note">
+            </div>
+            <!-- Clicking on this input will submit (post) the form -->
+            <div>
+                <input class="submit" type="submit" value="Add a Memory">
+            </div>
+        </form>
+        <div class="myButton">
+            <!-- <button class="submit" onclick="getAll()">Show all Memories</button> -->
+            <button id="getAll" class="submit">Show all Memories</button>
+        </div>
+        <div class="myButton">
+            <!-- <button class="submit" onclick="getTitle()">Show Memories by Title</button> -->
+            <button id="getTitle" class="submit">Show Memories by Title</button>
+        </div>
+        <div class="myButton">
+            <!-- <button class="submit" onclick="getTags()">Show Memories by Tags</button> -->
+            <button id="getTags" class="submit">Show Memories by Tags</button>
+        </div>
+        <div class="myButton">
+            <!-- <button class="submit" onclick="update()">Update Selected Memory</button> -->
+            <button id="update" class="submit">Update Selected Memory</button>
+        </div>
+        <div class="myButton">
+            <!-- <button class="submit" onclick="del()">Delete Selected Memory</button> -->
+            <button id="del" class="submit">Delete Selected Memory</button>
+        </div>     
+    </div>
+
+    <div id="results" class="container">
+        <!-- Results are dynamiclly generated and added here -->
+    </div>
+
+    <div id="resultsImg" class="container">
+        <!-- Results are dynamiclly generated and added here -->
+    </div>
+</body>
+</html>
