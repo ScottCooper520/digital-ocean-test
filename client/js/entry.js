@@ -1,8 +1,12 @@
+// window.API_ENDPOINT = "http://localhost:5000/msg";
+window.API_ENDPOINT = "amazing-electro-lab.com";
+
 addHandlers();
 
 function addHandlers() {
     $('#getTitle').off().on('click', () => {
         console.log("Clicked Title");
+        console.log("In addHandlers = " + window.API_ENDPOINT);
         ajaxCallTest();
     });
     $('#getTags').off().on('click', () => {
@@ -20,7 +24,8 @@ function addHandlers() {
 }
 
 function ajaxCallTest() {
-    let urlString = "http://localhost:5000/msg";
+    // let urlString = "http://localhost:5000/msg";
+    let urlString = window.API_ENDPOINT;
     let request = $.ajax({
         method: "GET",
         url: urlString,
@@ -32,6 +37,8 @@ function ajaxCallTest() {
     request.done((msg) => {
         console.log(msg);
         $('#results').html("Successfully returned from server...");
+        $('#results').append("In Ajax call = " + window.API_ENDPOINT);
+
     });
 
     request.fail((jqXHR, msg) => {
