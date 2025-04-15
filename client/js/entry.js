@@ -1,5 +1,5 @@
-// window.API_ENDPOINT = "http://localhost:5000/msg";
-window.API_ENDPOINT = "amazing-electro-lab.com";
+// window.API_ENDPOINT = "http://localhost:5000";
+window.API_ENDPOINT = "https://amazing-electro-lab.com";
 
 addHandlers();
 
@@ -25,7 +25,7 @@ function addHandlers() {
 
 function ajaxCallTest() {
     // let urlString = "http://localhost:5000/msg";
-    let urlString = window.API_ENDPOINT;
+    let urlString = window.API_ENDPOINT + "/msg";
     let request = $.ajax({
         method: "GET",
         url: urlString,
